@@ -5,7 +5,7 @@ contract MostSimpleToken {
     mapping (address => uint256) public balanceOf;
 
     
-    constructor () {                                 //instead of function, no warnings in Solidity ^0.4.23
+    constructor () {                                 //instead of function, no warnings in Solidity 0.4.23
         balanceOf[msg.sender] = 21000000;              
     }
 
