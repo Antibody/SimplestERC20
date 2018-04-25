@@ -1,6 +1,6 @@
 pragma solidity ^0.4.23;
 
-contract MostSimpleToken {
+contract SimpleToken {
    
     mapping (address => uint256) public balanceOf;
 
