@@ -1,0 +1,29 @@
+pragma solidity ^0.4.23;
+
+contract BasicTokenWithName {
+
+    mapping (address => uint256) public balanceOf;
+
+string public name;
+string public symbol;
+uint8 public decimals;
+uint256 public totalSupply;
+    
+    constructor (                                           //solidity ^0.4.23 compatible
+        uint256 initialSupply, string tokenName, string tokenSymbol, uint8 decimalUnits
+        ) public {
+        balanceOf[msg.sender] = initialSupply;              //allows defining initialSupply in IDE instead of hard-coding it
+        name = tokenName;
+        symbol = tokenSymbol;
+        decimals = decimalUnits;
+        totalSupply = initialSupply;
+    }
+
+   
+    function transfer(address _to, uint256 _value) public {
+        require(balanceOf[msg.sender] >= _value);           
+        require(balanceOf[_to] + _value >= balanceOf[_to]); 
+        balanceOf[msg.sender] -= _value;                    
+        balanceOf[_to] += _value;                           
+    }
+}
