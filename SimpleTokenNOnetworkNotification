@@ -2,10 +2,10 @@ pragma solidity ^0.4.23;
 
 contract SimpleERC20Token {
    
-    mapping (address => uint256) public balanceOf;
+    mapping (address => uint256) public balanceOf;     // maps all issued tokens to my e.g. MetaMask address
 
     
-    constructor (
+    constructor (                                      // allows specification of this var in IDE
         uint256 initialSupply
         ) public {
         balanceOf[msg.sender] = initialSupply;              
